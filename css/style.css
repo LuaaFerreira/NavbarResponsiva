@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.hero {
+  height: 100vh;
+  background: url('../img/fundo.jpeg') no-repeat center center / cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+}
+
+nav {
+  width: calc(100% - 60px);
+  height: 78px;
+  position: fixed;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 28px;
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.logo {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.checkbtn {
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.18),
+    rgba(0, 0, 0, 0.05)
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  color: white;
+}
+
+.content h1 {
+  font-size: 3.2rem;
+  margin-bottom: 18px;
+  line-height: 1.1;
+}
+
+.content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background: #d8b4b4;
+  padding: 12px 24px;
+  border-radius: 30px;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background: #c79a9a;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 952px) {
+  nav {
+    padding: 0 30px;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  nav ul li a {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+  }
+
+  .content h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+    z-index: 1001;
+  }
+
+  nav ul {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: rgba(196, 161, 182, 0.97);
+    backdrop-filter: blur(8px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    transition: 0.5s;
+  }
+
+  nav ul li {
+    display: block;
+  }
+
+  nav ul li a {
+    font-size: 1.2rem;
+  }
+
+  #check:checked ~ ul {
+    left: 0;
+  }
+
+  .hero {
+    padding: 0 30px;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .content h1 {
+    font-size: 2rem;
+  }
+
+  .content p {
+    font-size: 0.95rem;
+  }
+}
